@@ -1,13 +1,13 @@
 {
-	"name": "lsp-sample-client",
-	"description": "VSCode part of a language server",
-	"author": "Microsoft Corporation",
+	"name": "vscode-maniascript-client",
+	"description": "Client implementation for the ManiaScript extension",
+	"author": "Vincent Parizet",
 	"license": "MIT",
 	"version": "0.0.1",
-	"publisher": "vscode",
+	"publisher": "vincent-p",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Microsoft/vscode-extension-samples"
+		"url": "https://github.com/vincent-p/vscode-maniascript"
 	},
 	"engines": {
 		"vscode": "^1.23.0"

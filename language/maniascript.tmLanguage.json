@@ -1,0 +1,186 @@
+{
+  "fileTypes": [
+    "Script.txt"
+  ],
+  "firstLineMatch": "#RequireContext ",
+  "keyEquivalent": "^~M",
+  "name": "ManiaScript",
+  "scopeName": "source.ms",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "match": "\\b(break|case|continue|default|else|for|foreach|if|return|switch|switchtype|while)\\b",
+      "name": "keyword.control.ms"
+    },
+    {
+      "match": "\\b(as|in|declare)\\b",
+      "name": "keyword.other.ms"
+    },
+    {
+      "match": "#\\b(Include|RequireContext|Setting|Const|Extends|Struct)\\b",
+      "name": "keyword.language.ms"
+    },
+    {
+      "match": "\\b(Void|Integer|Real|Boolean|Text|Vec2|Vec3|Int3|Ident)\\b",
+      "name": "storage.type.ms"
+    },
+    {
+      "match": "\\b(netread|netwrite|metadata|persistent)\\b",
+      "name": "storage.modifier.ms"
+    },
+    {
+      "match": "\\b(CMlScript|CMlEntry|CMlFileEntry|CMlTextEdit|CMlLabel|CMlMediaPlayer|CMlQuad|CMlGauge|CMlGraph|CMlMinimap|CMlCamera|CMlBrowser|CManiaApp|CManiaAppTitleLayer|CManiaAppEvent|CManiaAppTitle|CManiaAppPlayground|CManiaAppStation|CModulePlayground|CModulePlaygroundInventory|CModulePlaygroundStore|CModulePlaygroundScoresTable|CModuleMenu|CModuleMenuComponent|CModuleMenuLayer|CModuleMenuFileBrowser|CStation|CMlStation|CEditorMainPlugin|CAnyEditorPlugin|CMapEditorPlugin|CMapEditorPluginLayer|CBadgeEditor|CServerPlugin|CSmMode|CSmMlScriptIngame|CSmAction|CSmMapType|CTmMlScriptIngame|CTmMode|CTmMapType|CNod|CMlPage|CUser|CTitle|CMlScriptEvent|CXmlManager|CHttpManager|CVideoManager|CAudioManager|CInputManager|CDataFileMgr|CScoreMgr|CPrivilegeMgr|CPresenceMgr|CAnimManager|CMlControl|CImage|CMlGraphCurve|CManiaAppBrowser|CMap|CUILayer|CUserV2Manager|CTitleFlow|CTitleEdition|CNotificationsConsumer|CAchievementsManager|CBadgeManager|CMatchSettingsManager|CManiaAppPlaygroundCommon|CManiaAppBase|CPackCreatorTitleInfo|CEditorPluginHandle|CEditorModule|CEditorMesh|CEditorEditor|CMapEditorPluginEvent|CBlockModel|CMacroblockModel|CBlock|CItemAnchor|CAnchorData|CBadge|CMapInfo|CClient|CScore|CTeam|CServerPluginEvent|CUIConfigMgr|CServerAdmin|CMode|CSmPlayer|CSmModeEvent|CSmMapBase|CSmMapLandmark|CSmScore|CSmObject|CMlScriptIngame|CSmActionEvent|CMapType|CTmMlPlayer|CTmRaceClientEvent|CTmScore|CTmPlayer|CTmModeEvent|CMlFrame|CXmlDocument|CHttpRequest|CVideo|CAudioSource|CAudioSourceMusic|CInputEvent|CInputPad|CTaskResult|CCampaign|CTaskResult_MapList|CGhost|CTaskResult_Ghost|CTaskResult_ReplayList|CTaskResult_GhostList|CTaskResult_FileList|CTaskResult_GameModeList|CTaskResult_NaturalLeaderBoardInfoList|CWebServicesTaskResult_MapRecordListScript|CTaskResult_BuddiesChallengeRecord|CTaskResult_BuddiesChallengeRecordsComparison|CTaskResult_BuddyChallengeRecordsComparison|CTaskResult_RealLeaderBoardInfoList|CTaskResult_CheckTargetedPrivilege|CTaskResult_GetOnlinePresence|CPlug|CUserV2|CTaskResult_StringIntList|CServerInfo|CPackCreator|CNotificationsConsumerEvent|CNotificationsConsumerNotification|CAchievementsEvent|CAchievementsAchievement|CAchievementsStat|CAchievementsAchievementDesc|CAchievementsStatDesc|CMatchSettings|CManiaAppPlaygroundEvent|CPlaygroundClient|CUIConfig|CGameEditorParent|CModuleMenuModel|CModuleMenuPageModel|CEditorPluginModuleEvent|CEditorAsset|CEditorEvent|CCollector|CBlockModelVariantGround|CBlockModelVariantAir|CBlockUnit|CUIConfigEvent|CModulePlaygroundHud|CXmlRpc|CModeTurretManager|CPlayer|CSmPlayerDriver|CModeTurret|CSmMapSector|CSmBlockPole|CSmMapGate|CSmMapGauge|CSmMapPlayerSpawn|CSmMapBotPath|CSmMapBotSpawn|CSmMapObjectAnchor|CTrackManiaScore|CTmResult|CXmlNode|CMapGroup|CReplayInfo|CGameModeInfo|CWebServicesTaskResult_NaturalLeaderBoardInfoList|CNaturalLeaderBoardInfo|CWebServicesTaskResult_PlayerMapRecords|CGamePlayerMapRecordScript|CHighScoreComparison|CHighScoreComparisonSummary|CWebServicesTaskResult_RealLeaderBoardInfoList|CRealLeaderBoardInfo|COnlinePresence|CUserV2Profile|CPackCreatorPack|CGameMatchSettingsPlaylistItemScript|CBlockModelVariant|CBlockUnitModel|CXmlRpcEvent|CSmBlock|CSmSector|CSmGauge|CPackCreatorRecipient|CBlockModelClip|CSmLandmark|CSmBase)\\b",
+      "name": "support.class.ms"
+    },
+    {
+      "match": "\\b(wait|sleep|assert|log)\\b",
+      "name": "support.function.ms"
+    },
+    {
+      "match": "\\b(\\.(count|exists|existskey|remove|removekey|add|sort|keyof))\\b",
+      "name": "support.function.ms"
+    },
+    {
+      "match": "\\b(This)\\b",
+      "name": "variable.language.ms"
+    },
+    {
+      "match": "\\b(G|P|Persistent|Net)_\\w*\\b",
+      "name": "variable.other.readwrite.ms"
+    },
+    {
+      "match": "\\b((C|S)_\\w*|CompatibleMapTypes|Version|ScriptName)\\b",
+      "name": "variable.other.constant.ms"
+    },
+    {
+      "match": "\\bPrivate_\\w*\\b",
+      "name": "variable.function.private.ms"
+    },
+    {
+      "match": "\\b(Null|NullId|True|False)\\b",
+      "name": "constant.language.ms"
+    },
+    {
+      "match": "\\b([0-9]+)\\b",
+      "name": "constant.numeric.ms"
+    },
+    {
+      "begin": "\"\"\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.ms"
+        }
+      },
+      "end": "\"\"\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.ms"
+        }
+      },
+      "name": "string.quoted.double.source.cs",
+      "patterns": [
+        {
+          "include": "#template-string-content"
+        }
+      ]
+    },
+    {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.source.cs"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.source.cs"
+        }
+      },
+      "name": "string.quoted.double.source.cs",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.source.cs"
+        }
+      ]
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "/\\*",
+          "captures": {
+            "0": {
+              "name": "meta.toc-list.banner.block.ms"
+            }
+          },
+          "end": "\\*/\\n?",
+          "name": "comment.block.ms"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "meta.toc-list.banner.block.ms"
+            }
+          },
+          "match": "(//).*$\\n?",
+          "name": "comment.block.ms"
+        }
+      ]
+    },
+    "template-string-content": {
+      "patterns": [
+        {
+          "begin": "{{{",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.operator.expression.ms"
+            }
+          },
+          "end": "}}}",
+          "endCaptures": {
+            "0": {
+              "name": "keyword.operator.expression.ms"
+            }
+          },
+          "name": "meta.group.expression.ms",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
+        },
+        {
+          "begin": "(<script><!--|<script>)",
+          "beginCaptures": {
+            "0": {
+              "name": "meta.brace.tag.script.open.ms"
+            },
+            "1": {
+              "name": "punctuation.tag.script.open.ms"
+            }
+          },
+          "end": "(--><\\/script>|<\\/script>)",
+          "endCaptures": {
+            "0": {
+              "name": "meta.brace.tag.script.close.ms"
+            },
+            "1": {
+              "name": "punctuation.tag.script.close.ms"
+            }
+          },
+          "name": "meta.group.script.ms",
+          "patterns": [
+            {
+              "include": "$self"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
