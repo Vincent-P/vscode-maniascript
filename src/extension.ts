@@ -10,45 +10,36 @@ import {
 	LanguageClient,
 	LanguageClientOptions,
 	ServerOptions,
-	TransportKind,
-	Trace
+	TransportKind
 } from 'vscode-languageclient';
 
 let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
 
-	const command = context.asAbsolutePath(path.join('server', './manialsp.exe'));
+	const command = 'manialsp.exe';
 
 	let serverOptions: ServerOptions = {
 		run: { command },
 		debug: { command },
 	};
 
-	// Options to control the language client
 	let clientOptions: LanguageClientOptions = {
-		// Register the server for plain text documents
 		documentSelector: [{ scheme: 'file', language: 'maniascript' }],
 		synchronize: {
 			fileEvents: workspace.createFileSystemWatcher('**/*.Script.txt')
 		}
 	};
 
-	// Create the language client and start the client.
 	client = new LanguageClient(
 		'manialsp',
 		'Maniscript LSP',
 		serverOptions,
-		clientOptions,
-		true
+		clientOptions
 	);
-
-	client.trace = Trace.Verbose;
 
 	// Start the client. This will also launch the server
 	client.start();
-
-	console.log("Start client from extension.");
 }
 
 export function deactivate(): Thenable<void> | undefined {

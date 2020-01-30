@@ -1,48 +1,39 @@
 {
-    "name": "vscode-maniascript",
-    "description": "Client implementation for the ManiaScript extension",
-    "author": "Vincent Parizet",
-    "license": "MIT",
-    "version": "1.0.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/vincent-p/vscode-maniascript"
-    },
-    "publisher": "vincent-p",
-    "keywords": [
-        "multi-root ready"
-    ],
-    "categories": [
-        "Programming Languages"
-    ],
-    "activationEvents": [
-        "onLanguage:maniascript"
-    ],
-    "main": "./client/out/extension",
-    "engines": {
-        "vscode": "^1.23.0"
-    },
-    "contributes": {
-        "languages": [
-            {
-                "id": "maniascript",
-                "aliases": [
-                    "ManiaScript",
-                    "maniascript"
-                ],
-                "extensions": [
-                    ".Script.txt"
-                ],
-                "configuration": "./language/language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "maniascript",
-                "scopeName": "source.ms",
-                "path": "./language/maniascript.tmLanguage.json"
-            }
-        ],
+	"name": "vscode-maniascript",
+	"displayName": "ManiaLsp",
+	"description": "Client implementation for the ManiaScript extension",
+	"author": "Vincent Parizet",
+	"license": "MIT",
+	"version": "1.0.3",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vincent-p/vscode-maniascript"
+	},
+	"publisher": "vincent-p",
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [],
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"activationEvents": [
+		"onLanguage:maniascript"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"languages": [
+			{
+				"id": "maniascript",
+				"aliases": [
+					"ManiaScript",
+					"maniascript"
+				],
+				"extensions": [
+					".Script.txt"
+				]
+			}
+		],
 		"configuration": {
 			"type": "object",
 			"title": "ManiaLSP configuration",
@@ -55,29 +46,26 @@
 						"messages",
 						"verbose"
 					],
-					"default": "verbose",
+					"default": "off",
 					"description": "Traces the communication between VS Code and the language server."
 				}
 			}
-		},
-        "snippets": [
-            {
-                "language": "maniascript",
-                "path": "./language/maniascript.json"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",
-        "compile": "tsc -b",
-        "watch": "tsc -b -w",
-        "postinstall": "cd client && npm install && cd ..",
-        "test": "sh ./scripts/e2e.sh"
-    },
-    "devDependencies": {
-        "@types/mocha": "^5.2.0",
-        "@types/node": "^8.0.0",
-        "tslint": "^5.16.0",
-        "typescript": "^3.5.1"
-    }
+		}
+	},
+	"scripts": {
+		"postinstall": "vscode-install",
+		"vscode:prepublish": "vscode-install && npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^5.2.1"
+	},
+	"devDependencies": {
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"tslint": "^5.16.0",
+		"typescript": "^3.6.4",
+		"vscode": "^1.1.36"
+	}
 }
